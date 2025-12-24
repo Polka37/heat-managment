@@ -1,0 +1,17 @@
+{
+  "name": "heat-managment",
+  "version": "1.0.0",
+  "title": "Heat managment",
+  "description": "Adds thermal mechanic from TFMG to vannila and beyond",
+  "contact": "https://github.com/Polka37/heat-managment",
+  "homepage": "https://github.com/Polka37/heat-managment",
+  "author": "Polka_37",
+  "factorio_version": "2.0",
+  "dependencies": [
+    "base >= 2.0.72",
+    "space-age >= 2.0.72",
+    "TFMG-thermal>= 0.4.9",
+    "(?) Krastorio2-spaced-out >= 1.5.17"
+  ],
+  "space_travel_required": true
+}
