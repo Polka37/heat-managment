@@ -17,4 +17,10 @@ data:extend({
 		setting_type = "startup",
 		default_value = 1,
 	},
+	{
+		type = "bool-setting",
+		name = "hm-require-coolant",
+		setting_type = "startup",
+		default_value = true,
+	},
 })
