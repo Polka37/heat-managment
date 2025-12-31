@@ -51,7 +51,7 @@ if settings.startup["hm-require-coolant"].value then
 			production_type = "input",
 			pipe_picture = underground_pipe_picture,
 			pipe_covers = pipecoverspictures(),
-			volume = 100,
+			volume = 10,
 			pipe_connections = {
 				{ flow_direction = "input-output", direction = defines.direction.south, position = { 1, 1 } },
 				{ flow_direction = "input-output", direction = defines.direction.east, position = { 1, 1 } },
@@ -64,12 +64,42 @@ if settings.startup["hm-require-coolant"].value then
 			production_type = "output",
 			pipe_picture = underground_pipe_picture,
 			pipe_covers = pipecoverspictures(),
-			volume = 100,
+			volume = 10,
 			pipe_connections = {
 				{ flow_direction = "input-output", direction = defines.direction.north, position = { 1, -1 } },
 				{ flow_direction = "input-output", direction = defines.direction.east, position = { 1, -1 } },
 				{ flow_direction = "input-output", direction = defines.direction.south, position = { -1, 1 } },
 				{ flow_direction = "input-output", direction = defines.direction.west, position = { -1, 1 } },
+			},
+			secondary_draw_orders = { north = -1, south = -1, east = -1, west = -1 },
+		},
+	}
+	data.raw["assembling-machine"]["hm-large-radiator"].fixed_recipe = nil
+	data.raw["assembling-machine"]["hm-large-radiator"].crafting_categories = { "radiator-coolant" }
+	data.raw["assembling-machine"]["hm-large-radiator"].fluid_boxes = {
+		{
+			production_type = "input",
+			pipe_picture = underground_pipe_picture,
+			pipe_covers = pipecoverspictures(),
+			volume = 10,
+			pipe_connections = {
+				{ flow_direction = "input-output", direction = defines.direction.south, position = { -2, 3 } },
+				{ flow_direction = "input-output", direction = defines.direction.east, position = { 3, -2 } },
+				{ flow_direction = "input-output", direction = defines.direction.north, position = { 2, -3 } },
+				{ flow_direction = "input-output", direction = defines.direction.west, position = { -3, 2 } },
+			},
+			secondary_draw_orders = { north = -1, south = -1, east = -1, west = -1 },
+		},
+		{
+			production_type = "output",
+			pipe_picture = underground_pipe_picture,
+			pipe_covers = pipecoverspictures(),
+			volume = 10,
+			pipe_connections = {
+				{ flow_direction = "input-output", direction = defines.direction.south, position = { 2, 3 } },
+				{ flow_direction = "input-output", direction = defines.direction.east, position = { 3, 2 } },
+				{ flow_direction = "input-output", direction = defines.direction.north, position = { -2, -3 } },
+				{ flow_direction = "input-output", direction = defines.direction.west, position = { -3, -2 } },
 			},
 			secondary_draw_orders = { north = -1, south = -1, east = -1, west = -1 },
 		},
