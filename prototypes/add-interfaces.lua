@@ -1,8 +1,8 @@
 local util = require("util")
 
 local assembler_heat = settings.startup["assembler-heat"].value
-local furnace_heat = settings.startup["assembler-heat"].value
-local thruster_heat = settings.startup["assembler-heat"].value
+local furnace_heat = settings.startup["furnace-heat"].value
+local thruster_heat = settings.startup["thruster-heat"].value
 
 -- Auto add interfaces
 for _, assembler in pairs(data.raw["assembling-machine"]) do
@@ -22,3 +22,7 @@ end
 -- Post Processing
 util.add_heat_interface(data.raw["assembling-machine"]["foundry"], 400, 650, furnace_heat)
 util.add_heat_interface(data.raw["furnace"]["recycler"], 150, 250, assembler_heat)
+
+if mods["Krastorio2-spaced-out"] then
+	util.add_heat_interface(data.raw["assembling-machine"]["kr-advanced-furnace"], 400, 650, furnace_heat)
+end

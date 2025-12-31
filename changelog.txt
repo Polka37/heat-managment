@@ -7,6 +7,8 @@ Date: 2025-12-31
   Changes:
     - Normal radiator technology now costs 2000 science and needs Vulcanus and Fulgora science
     - Normal radiator requires LDS instead of lithium plates
+  Bugfixes:
+    - Fixed K2SO advanced furnace used assembler defaults instead of furnace ones
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 2025-12-24
