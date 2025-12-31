@@ -52,7 +52,9 @@ data:extend({
 })
 
 table.insert(data.raw["technology"]["space-platform"].effects, { type = "unlock-recipe", recipe = "small-radiator" })
-table.insert(
-	data.raw["technology"]["cryogenic-plant"].effects,
-	{ type = "unlock-recipe", recipe = "hm-heat-radiation-fluoroketone" }
-)
+if settings.startup["hm-require-coolant"].value then
+	table.insert(
+		data.raw["technology"]["cryogenic-plant"].effects,
+		{ type = "unlock-recipe", recipe = "hm-heat-radiation-fluoroketone" }
+	)
+end

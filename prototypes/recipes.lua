@@ -1,5 +1,4 @@
-data:extend({
-	-- Radiators
+data:extend({ -- Radiators
 	{
 		type = "recipe",
 		name = "small-radiator",
@@ -36,7 +35,13 @@ data:extend({
 		},
 		results = { { type = "item", name = "hm-large-radiator", amount = 1 } },
 	},
-	-- Coolants
+})
+
+if not settings.startup["hm-require-coolant"].value then
+	return
+end
+
+data:extend({ -- Coolants
 	{ type = "recipe-category", name = "radiator-coolant" },
 	{
 		type = "item-subgroup",
