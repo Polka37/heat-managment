@@ -1,12 +1,26 @@
 local util = {}
 
+local DEBUG = true
+
+--- @param message string
+function util.error(message)
+	if DEBUG == true then
+		log(message)
+	end
+end
+
 --- @param entity string
 --- @param max_working_temperature integer
 --- @param max_safe_temperature integer
 --- @param heat_ratio float
 function util.add_heat_interface(entity, max_working_temperature, max_safe_temperature, heat_ratio)
 	if not entity then
-		log("a building doesn't exist, skipping adding heat interface")
+		util.error("a building doesn't exist, skipping adding heat interface")
+		return
+	end
+
+	if not entity.collision_box then
+		util.error(entity.name .. "doesn't have collision_box, skipping adding heat interface")
 		return
 	end
 
