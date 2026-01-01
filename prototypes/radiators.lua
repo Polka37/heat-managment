@@ -1,4 +1,4 @@
-local ground_radiator_shift = util.by_pixel(-5, -20)
+local radiator_shift = util.by_pixel(-5, -20)
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 local item_sounds = require("__base__.prototypes.item_sounds")
@@ -48,12 +48,100 @@ data:extend({
 			animation = {
 				layers = {
 					{
+						filename = "__base__/graphics/entity/heat-pipe/heat-pipe-t-1.png",
+						priority = "high",
+						shift = util.by_pixel(-96, 96),
+						repeat_count = 80,
+						animation_speed = 0.07,
+						size = 64,
+						scale = 0.5,
+					},
+					{
+						filename = "__base__/graphics/entity/heat-pipe/heat-pipe-t-1.png",
+						priority = "high",
+						shift = util.by_pixel(96, 96),
+						repeat_count = 80,
+						size = 64,
+						scale = 0.5,
+					},
+					{
+						filename = "__base__/graphics/entity/heat-pipe/heat-pipe-t-1.png",
+						priority = "high",
+						shift = util.by_pixel(-96, -96),
+						repeat_count = 80,
+						size = 64,
+						scale = 0.5,
+					},
+					{
+						filename = "__base__/graphics/entity/heat-pipe/heat-pipe-t-1.png",
+						priority = "high",
+						shift = util.by_pixel(96, -96),
+						repeat_count = 80,
+						size = 64,
+						scale = 0.5,
+					},
+					{
+						filename = "__base__/graphics/entity/heat-pipe/heat-pipe-corner-up-left-1.png",
+						priority = "high",
+						shift = util.by_pixel(-64, 96),
+						repeat_count = 80,
+						size = 64,
+						scale = 0.5,
+					},
+					{
+						filename = "__base__/graphics/entity/heat-pipe/heat-pipe-corner-up-left-1.png",
+						priority = "high",
+						shift = util.by_pixel(96, -64),
+						repeat_count = 80,
+						size = 64,
+						scale = 0.5,
+					},
+					{
+						filename = "__base__/graphics/entity/heat-pipe/heat-pipe-corner-up-right-1.png",
+						priority = "high",
+						shift = util.by_pixel(64, 96),
+						repeat_count = 80,
+						size = 64,
+						scale = 0.5,
+					},
+					{
+						filename = "__base__/graphics/entity/heat-pipe/heat-pipe-corner-down-left-1.png",
+						priority = "high",
+						shift = util.by_pixel(-64, -96),
+						repeat_count = 80,
+						size = 64,
+						scale = 0.5,
+					},
+					{
+						filename = "__base__/graphics/entity/heat-pipe/heat-pipe-straight-horizontal-1.png",
+						priority = "high",
+						shift = util.by_pixel(-96, 0),
+						repeat_count = 80,
+						size = 64,
+						scale = 0.5,
+					},
+					{
+						filename = "__base__/graphics/entity/heat-pipe/heat-pipe-straight-horizontal-1.png",
+						priority = "high",
+						shift = util.by_pixel(96, 0),
+						repeat_count = 80,
+						size = 64,
+						scale = 0.5,
+					},
+					{
+						filename = "__base__/graphics/entity/heat-pipe/heat-pipe-straight-vertical-1.png",
+						priority = "high",
+						shift = util.by_pixel(0, 96),
+						repeat_count = 80,
+						size = 64,
+						scale = 0.5,
+					},
+					{
 						filename = "__heat-managment__/graphics/large-radiator/large-radiator-animation.png",
 						priority = "high",
 						line_length = 10,
 						frame_count = 80,
-						animation_speed = 0.1,
-						shift = ground_radiator_shift,
+						shift = radiator_shift,
 						width = 590,
 						height = 640,
 						scale = 0.38,
@@ -61,9 +149,8 @@ data:extend({
 					{
 						filename = "__heat-managment__/graphics/large-radiator/large-radiator-hr-shadow.png",
 						priority = "high",
-						frame_count = 1,
 						repeat_count = 80,
-						shift = ground_radiator_shift,
+						shift = radiator_shift,
 						width = 1200,
 						height = 700,
 						scale = 0.38,
@@ -79,7 +166,7 @@ data:extend({
 						line_length = 10,
 						frame_count = 80,
 						animation_speed = 0.1,
-						shift = ground_radiator_shift,
+						shift = radiator_shift,
 						width = 590,
 						height = 640,
 						scale = 0.38,
@@ -114,38 +201,61 @@ data:extend({
 				{ position = { -3, 0 }, direction = defines.direction.west },
 				{ position = { -3, 3 }, direction = defines.direction.west },
 			},
-			heat_picture = {
-				north = {
-					filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-heat-1.png",
-					size = 384,
-					scale = 0.5,
-					blend_mode = "additive",
-					draw_as_glow = true,
-					tint = { 0.5, 0.5, 0.5 },
-				},
-				east = {
-					filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-heat-2.png",
-					size = 384,
-					scale = 0.5,
-					blend_mode = "additive",
-					draw_as_glow = true,
-					tint = { 0.5, 0.5, 0.5 },
-				},
+			pipe_covers = {
 				south = {
-					filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-heat-3.png",
-					size = 384,
-					scale = 0.5,
-					blend_mode = "additive",
-					draw_as_glow = true,
-					tint = { 0.5, 0.5, 0.5 },
+					layers = {
+						{
+							size = 64,
+							filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-up-1.png",
+							shift = util.by_pixel(0, -16),
+							scale = 0.5,
+						},
+					},
+				},
+				north = {
+					layers = {
+						{
+							size = 64,
+							filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-down-1.png",
+							shift = util.by_pixel(0, 16),
+							scale = 0.5,
+						},
+					},
 				},
 				west = {
-					filename = "__TFMG-thermal__/graphics/small-radiator/small-radiator-heat-4.png",
-					size = 384,
-					scale = 0.5,
-					blend_mode = "additive",
-					draw_as_glow = true,
-					tint = { 0.5, 0.5, 0.5 },
+					layers = {
+						{
+							size = 64,
+							filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-right-1.png",
+							shift = util.by_pixel(16, 0),
+							scale = 0.5,
+						},
+					},
+				},
+				east = {
+					layers = {
+						{
+							size = 64,
+							filename = "__base__/graphics/entity/heat-pipe/heat-pipe-ending-left-1.png",
+							shift = util.by_pixel(-16, 0),
+							scale = 0.5,
+						},
+					},
+				},
+			},
+			minimum_glow_temperature = 350,
+			heat_picture = {
+				layers = {
+					{
+						filename = "__heat-managment__/graphics/large-radiator/heated.png",
+						priority = "high",
+						shift = util.by_pixel(0, -9),
+						width = 590,
+						height = 640,
+						scale = 0.38,
+						blend_mode = "normal",
+						tint = { 0.5, 0.4, 0.3, 0.5 },
+					},
 				},
 			},
 		},
