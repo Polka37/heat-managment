@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+Date: 2026-01-06
+  Changes:
+    - Heat pipes are now unlocked with space platform research
+---------------------------------------------------------------------------------------------------
 Version: 1.1.1
-Date: 2026-01-1
+Date: 2026-01-01
   Graphics:
     - Added heat pipe connections graphics to large radiator
     - Decreased large radiator animation speed by 30%
