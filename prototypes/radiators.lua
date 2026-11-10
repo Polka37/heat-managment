@@ -179,6 +179,8 @@ data:extend({
 		crafting_categories = { "radiator" },
 		fixed_recipe = "TFMG-heat-radiation",
 		crafting_speed = 6,
+		energy_usage_quality_multiplier = radiator_quality_multipliers,
+		quality_affects_energy_usage = true,
 		energy_usage = "100MW",
 		energy_source = {
 			type = "heat",
